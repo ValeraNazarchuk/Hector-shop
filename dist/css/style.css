@@ -198,6 +198,12 @@ body {
   cursor: pointer;
 }
 
+.catalog {
+  margin-top: 50px;
+  position: absolute;
+  transform: translateY(-200%);
+}
+
 .catalog__inner {
   display: flex;
   flex-direction: column;
@@ -206,11 +212,50 @@ body {
 .catalog__clothers {
   display: flex;
   align-items: center;
+  gap: 40px;
 }
 .catalog__clothers-link {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.07em;
+  padding: 17px 57px;
+  border: 1px solid #0F0F0F;
+}
+.catalog__clothers-link:hover {
+  cursor: pointer;
+}
+
+.catalog__border {
+  margin: 40px 0 30px;
+  width: 100%;
+  border: 1px solid #878787;
+}
+
+.catalog__lists {
+  display: flex;
+  align-items: center;
+  gap: 135px;
+}
+
+.catalog__list {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+.catalog__list-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 28px;
+}
+.catalog__list-item {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #666666;
+}
+.catalog__list-item + .catalog__list-item {
+  margin-top: 25px;
 }
 /*# sourceMappingURL=style.css.map */
