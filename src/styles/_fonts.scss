@@ -1,0 +1,10 @@
+// Тут назву шрифта можна писати однакове а в Style просто прописувати товщину(font-weight) а тому де інший шрифт то і його назву
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 900;
+  font-style: normal;
+  src: local('Lato'), url('') format('woff2'), url('') format('woff'),
+    url('') format('eot');
+  font-display: swap;
+}
