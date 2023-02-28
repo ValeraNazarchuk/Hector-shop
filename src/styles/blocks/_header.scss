@@ -33,14 +33,15 @@
     line-height: 22px;
 }
 
+.nav__item-arrow {
+  margin-left: 7px;
+}
+
 .arrow--active {
   margin-left: 17px;
   transform: rotate(180deg);
 }
 
-.nav__item-arrow {
-  margin-left: 7px;
-}
 
 .header__logo {
   margin-left: 50px;
@@ -59,19 +60,45 @@
 // -----------------Catalog-----------------------
 .catalog {
   background-color: $bg-white;
-  padding: 50px 30px;
   margin-top: 50px;
   position: absolute;
   transform: translateY(-200%);
+  transition: transform .5s;
+  padding: 0 20px 55px 0px;
 }
 
 .catalog--active {
-  transform: translateY(0);
+  transform: translateY(-30%);
 }
 
 .catalog__inner {
   display: flex;
   flex-direction: column;
+}
+
+.catalog__btn-back{
+    padding: 47px 62px 41px 36px;
+    margin: 0 0 50px 60px;
+    max-width: 195px;
+    background-color: $bg-black1;
+    opacity: 0.5;
+    color: $fs-white;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 48%;
+      left: 75%;
+      width: 20px;
+      height: 11px;
+      background-image: url(../img/header/arrow-rotate.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 }
 
 .catalog__clothers {
@@ -127,13 +154,23 @@
 //-------------Modal--------------
 
 .modal {
-  border: 3px solid $border-black;
-  max-width: 700px;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.4);
+  display: none; //------------------
+}
+
+.modal__inner {
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  display: none; //------------------
+  transform: translate(-50%, -50%);
+  background-color: $bg-white;
+  border: 3px solid $border-black;
   &::before {
     content: '';
     position: absolute;
@@ -158,12 +195,13 @@
     width: 68px;
     height: 78px;
   }
-  &__closed {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    cursor: pointer;
-  }
+}
+
+.modal__closed {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  cursor: pointer;
 }
 
 .modal__box {

@@ -202,13 +202,13 @@ body {
   line-height: 22px;
 }
 
+.nav__item-arrow {
+  margin-left: 7px;
+}
+
 .arrow--active {
   margin-left: 17px;
   transform: rotate(180deg);
-}
-
-.nav__item-arrow {
-  margin-left: 7px;
 }
 
 .header__logo {
@@ -227,19 +227,45 @@ body {
 
 .catalog {
   background-color: #fff;
-  padding: 50px 30px;
   margin-top: 50px;
   position: absolute;
   transform: translateY(-200%);
+  transition: transform 0.5s;
+  padding: 0 20px 55px 0px;
 }
 
 .catalog--active {
-  transform: translateY(0);
+  transform: translateY(-30%);
 }
 
 .catalog__inner {
   display: flex;
   flex-direction: column;
+}
+
+.catalog__btn-back {
+  padding: 47px 62px 41px 36px;
+  margin: 0 0 50px 60px;
+  max-width: 195px;
+  background-color: #0F0F0F;
+  opacity: 0.5;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  position: relative;
+}
+.catalog__btn-back::after {
+  content: "";
+  position: absolute;
+  top: 48%;
+  left: 75%;
+  width: 20px;
+  height: 11px;
+  background-image: url(../img/header/arrow-rotate.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .catalog__clothers {
@@ -293,15 +319,25 @@ body {
 }
 
 .modal {
-  border: 3px solid #0F0F0F;
-  max-width: 700px;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.modal__inner {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
+  background-color: #fff;
+  border: 3px solid #0F0F0F;
 }
-.modal::before {
+.modal__inner::before {
   content: "";
   position: absolute;
   background-image: url(../img/header/bg-before-logo.svg);
@@ -313,7 +349,7 @@ body {
   width: 116px;
   height: 134px;
 }
-.modal::after {
+.modal__inner::after {
   content: "";
   position: absolute;
   background-image: url(../img/header/bg-after-logo.svg);
@@ -325,6 +361,7 @@ body {
   width: 68px;
   height: 78px;
 }
+
 .modal__closed {
   position: absolute;
   top: -20px;
