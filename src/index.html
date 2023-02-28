@@ -18,7 +18,7 @@
             <ul class="nav__list">
               <li class="nav__list-item">
                 <a class="nav__item-link" href="#">КАТАЛОГ</a>
-                <div class="nav__item-arrow">
+                <div class="nav__item-arrow ">
                   <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.4671 -1.45631e-07L6.5 4.94673L1.53293 -1.94682e-08L-2.45768e-08 1.52661L6.5 8L13 1.52661L11.4671 -1.45631e-07Z" fill="#0F0F0F"/>
                   </svg>
@@ -51,7 +51,7 @@
           <div class="header__box">
             <img class="header__box-img" src="./img/header/heart.svg" alt="heart">
             <img class="header__box-img" src="./img/header/basket.svg" alt="backet">
-            <img class="header__box-img" src="./img/header/user.svg" alt="user">
+            <img class="header__box-img" data-user="user" src="./img/header/user.svg" alt="user">
             <img class="header__box-img" src="./img/header/search.svg" alt="search">
           </div>
         </div>
@@ -179,6 +179,61 @@
     </header>
 
     <main>
+      <section class="top">
+          <div class="container">
+          <div class="top__inner">
+            <div class="top__content">
+              <h1 class="top__content-title">
+                МУЖСКАЯ КОЛЛЕКЦИЯ
+              </h1>
+              <h5 class="top__content-subtitle">
+                Распродажа коллекций со скидками до 50%, доставка до вашего склада
+              </h5>
+              <a class="top__content-link" href="#">ПОДРОБНЕЕ</a>
+            </div>
+
+            <div class="slider__box">
+              <div class="slider__box-images">
+                <img class="slider-img" src="./img/top/slider-01.png" alt="">
+              </div>
+
+              <ul class="slider__list">
+                <li class="slider__list-number">01</li>
+                <li class="slider__list-number number-active">02</li>
+                <li class="slider__list-number">03</li>
+                <li class="slider__list-number">04</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section class="info">
+          <div class="container">
+          <ul class="info__list">
+            <li class="info__list-item" href="#">
+              <img class="info__list-img" src="./img/info/1.png" alt="in the photo is a model">
+              <div class="info__list-box">
+                <a class="info__list-link" href="#">Акции-<br> Новая серия</a>
+                <p class="info__list-text">Мужские футболки с модными принтами в стиле Хайтек</p>
+              </div>
+            </li>
+            <li class="info__list-item" href="#">
+              <img class="info__list-img" src="./img/info/2.png" alt="in the photo is a model">
+              <div class="info__list-box">
+                <a class="info__list-link" href="#">Успей до 10.04</a>
+                <p class="info__list-text">Распродажа со скидками до 50%. Мужские футболки всех размеров.</p>
+              </div>
+            </li>
+            <li class="info__list-item" href="#">
+              <img class="info__list-img" src="./img/info/3.png" alt="in the photo is a model">
+              <div class="info__list-box">
+                <a class="info__list-link" href="#">Скидки до 45%</a>
+                <p class="info__list-text">На все футболки серии Лето 2019 при заказе от 2000 грн.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
     </main>
 
     <footer class="footer"></footer>
