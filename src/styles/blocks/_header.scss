@@ -111,3 +111,152 @@
     margin-top: 25px;
   }
 }
+
+//-------------Modal--------------
+
+.modal {
+  border: 3px solid $border-black;
+  max-width: 700px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none; //------------------
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(../img/header/bg-before-logo.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: -70px;
+    left: -60px;
+    width: 116px;
+    height: 134px;
+  }
+    &::after {
+    content: '';
+    position: absolute;
+    background-image: url(../img/header/bg-after-logo.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: -40px;
+    right: -35px;
+    width: 68px;
+    height: 78px;
+  }
+  &__closed {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    cursor: pointer;
+  }
+}
+
+.modal__box {
+  width: 700px;
+  padding: 45px 45px 30px 50px;
+  display: flex;
+  // display: none; //------------
+  flex-direction: column;
+  &-buttons {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+  &-btn {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.07em;
+    padding: 25px 0px 22px;
+    width: 100%;
+    border: 3px solid $border-black;
+  }
+}
+
+.button-active {
+  background-color: $bg-black1;
+  color: $fs-white;
+}
+
+.form-registration,
+.form-login {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 375px;
+}
+
+.form-registration {
+  display: none;
+}
+
+.form__box-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.form__input {
+  width: 100%;
+  outline: 0;
+  border: none;
+  border-bottom: 3px solid $bg-black1;
+  padding: 14px 10px 14px 0px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.07em;
+  &::placeholder {
+    color: $fs-black1;
+  }
+}
+
+.form__btn {
+  margin-top: 47px;
+  width: 100%;
+  padding: 24px 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.07em;
+  color: $fs-white;
+  background-color: $bg-black1;
+}
+
+.form__link {
+  margin-top: 17px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.07em;
+  text-decoration-line: underline;
+  color: $fs-gray2;
+}
+
+.modal__restoration {
+  display: none;
+  width: 500px;
+  padding-bottom: 40px;
+  &-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.07em;
+    padding: 25px 0px 22px;
+    width: 100%;
+    background-color: $bg-black;
+    color: $bg-white;
+    text-align: center;
+    margin-bottom: 37px;
+  }
+  &-box {
+    margin: 0 auto;
+    width: 375px;
+  }
+}
