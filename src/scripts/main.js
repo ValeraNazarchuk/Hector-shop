@@ -9,15 +9,14 @@ catalogBack.onclick = () => catalog.classList.remove('catalog--active')
 //----------------------------
 
 const icons = document.querySelectorAll('.header__box-img')
-const modalWindow = document.querySelector('.modal') 
-const modalClosed = document.querySelector('.modal__closed') 
-const modalBox = document.querySelector('.modal__box') 
-const modalButtons = document.querySelectorAll('.modal__box-btn') 
-const formLogin = document.querySelector('.form-login') 
+const modalWindow = document.querySelector('.modal')
+const modalClosed = document.querySelector('.modal__closed')
+const modalBox = document.querySelector('.modal__box')
+const modalButtons = document.querySelectorAll('.modal__box-btn')
+const formLogin = document.querySelector('.form-login')
 const formRegistration = document.querySelector('.form-registration')
 const modalRestoration = document.querySelector('.modal__restoration')
 const formLink = document.querySelector('.form__link')
-
 
 icons[2].addEventListener('click', () => {
   modalWindow.style.display = 'flex'
@@ -49,3 +48,26 @@ formLink.addEventListener('click', () => {
   modalBox.style.display = 'none'
   modalRestoration.style.display = 'block'
 })
+
+// --------------Slider-----------------
+const sliderNumber = document.querySelectorAll('.slider__list-number')
+const sliderImg = document.querySelector('.slider-img')
+
+let indexSlider = 0
+setInterval(function () {
+  sliderNumber.forEach((el) => {
+    if (el.classList.contains('number-active')) {
+      el.classList.remove('number-active')
+    }
+  })
+  
+  if (sliderNumber.length <= indexSlider) {
+    indexSlider = 0
+    sliderImg.setAttribute('src', `./img/top/slider-0${indexSlider + 1}.png`)
+    sliderNumber[indexSlider].classList.add('number-active')
+  } else {
+    sliderNumber[indexSlider].classList.add('number-active')
+    sliderImg.setAttribute('src', `./img/top/slider-0${indexSlider + 1}.png`)
+    indexSlider++
+  }
+}, 5000)
