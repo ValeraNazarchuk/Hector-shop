@@ -53,7 +53,7 @@ formLink.addEventListener('click', () => {
 const sliderNumber = document.querySelectorAll('.slider__list-number')
 const sliderImg = document.querySelector('.slider-img')
 
-let indexSlider = 0
+let indexSlider = 1
 setInterval(function () {
   sliderNumber.forEach((el) => {
     if (el.classList.contains('number-active')) {
