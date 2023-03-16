@@ -1,9 +1,82 @@
 .top {
-  // height: 100vh;
-  margin-top: 37px;
-  &__inner {
+  max-height: 1100px; 
+  height: 100vh;
+  &__sliders{
+    height: 100%;
+  }
+  &__slider {
+    height: 100%;
     display: flex;
     align-items: center;
+    &-img{
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+    &-body{
+      color: $fs-white;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 30px 0 100px;
+    }
+    &-title {
+      font-size: 100px;
+      font-weight: 200;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      line-height: 130px;
+    }
+    &-subtitle {
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+    &-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $fs-white;
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: .07em;
+      line-height: 22px;
+      text-transform: uppercase;
+      height: 73px;
+      width: 313px;
+      padding: 0 35px 0 0;
+      border: 1px solid $border-white;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        height: 1px;
+        width: 70px;
+        background-color: $bg-white;
+        transition: all .5s;
+      }
+      &:hover {
+        &::before{
+          width: 40px;
+        }
+      }
+    }
   }
 }
 
@@ -34,29 +107,6 @@
   }
 }
 
-.slider__box {
-  display: flex;
-  margin-left: 90px;
-}
-
-.slider__list {
-  margin-top: auto;
-  margin:  auto 0 80px;
-  &-number {
-    font-weight: 300;
-    font-size: 36px;
-    line-height: 44px;
-    text-align: right;
-    letter-spacing: 0.07em;
-    color: $fs-gray3;
-    transition: all 1s;
-    &::before {
-      content: '';
-      transition: all 1s;
-    }
-  }
-}
-
 .number-active {
   font-weight: 700;
   font-size: 64px;
@@ -65,13 +115,4 @@
   letter-spacing: 0.07em;
   color: $bg-black1;
   position: relative;
-  &::before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -50px;
-    background-color: $bg-black1;
-    width: 38px;
-    height: 4px;
-  }
 }

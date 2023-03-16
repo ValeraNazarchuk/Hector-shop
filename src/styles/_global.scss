@@ -33,3 +33,19 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
+
+.icons {
+  max-width: 24px;
+  max-height: 24px;
+  transition: all 0.5s;
+}
+
+.icon__backet,
+.icon__heart,
+.icon__search,
+.icon__user {
+  &:hover{
+    fill: brown;
+    cursor: pointer;
+  }
+}

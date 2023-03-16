@@ -1,10 +1,88 @@
-const btnCatalog = document.querySelectorAll('.nav__list-item')
+const header = document.querySelector('.header')
+const navItem = document.querySelectorAll('.nav__list-item')
+const navLink = document.querySelectorAll('.nav__item-link')
+const headerIcon = document.querySelectorAll('.header__box-icon')
 const catalog = document.querySelector('.catalog')
-const catalogBack = document.querySelector('.catalog__btn-back')
+const clients = document.querySelector('.nav__clients-list')
+const headerLogo = document.querySelector('.header__logo > img')
 
-btnCatalog[0].onclick = () => catalog.classList.add('catalog--active')
+// Собитія для кнопки 'Каталог'
+navItem[0].addEventListener('mouseenter', () => {
+  // поява блоку каталог на екрані
+  catalog.style.display = 'block'
 
-catalogBack.onclick = () => catalog.classList.remove('catalog--active')
+  // заміна фону для header
+  header.style.backgroundColor = 'white'
+
+  // функція для додавання класу кожному елементу
+  addClass(navLink, 'text--black')
+  addClass(headerIcon, 'text--black')
+
+  // стилі кнопки каталога коли вона активна
+  navLink[0].classList.add('button--active')
+
+  // заміна лого на темне
+  headerLogo.setAttribute('src', './img/header/logoBlack.svg')
+})
+
+navItem[0].addEventListener('mouseleave', () => {
+  catalog.style.display = 'none'
+  header.style.backgroundColor = 'transparent'
+  removedClass(navLink, 'text--black')
+  removedClass(headerIcon, 'text--black')
+  navLink[0].classList.remove('button--active')
+  headerLogo.setAttribute('src', './img/header/logoWhite.svg')
+})
+
+// функція для додавання класу
+function addClass(block, property) {
+  for(let i = 0; i < block.length; i++){
+    block[i].classList.add(property)
+  }
+}
+
+// функція для видалення класу
+function removedClass(block, property) {
+  for (let i = 0; i < block.length; i++) {
+    block[i].classList.remove(property)
+  }
+}
+
+// собитія для кнопки 'клієнтам'
+navItem[1].addEventListener('mouseenter', () => {
+  // поява блоку
+  clients.style.display = 'flex'
+
+  // стилі кнопки 'клієнтам' коли вона активна
+  navLink[1].classList.add('button--active')
+})
+
+navItem[1].addEventListener('mouseleave', () => {
+  clients.style.display = 'none'
+  navLink[1].classList.remove('button--active')
+})
+
+//-------------CATALOG-------------
+
+const catalogMenuBtn = document.querySelectorAll('.catalog__menu-link')
+const catalogBox = document.querySelectorAll('.catalog__body-box')
+
+// наклаю собитія на кожну кнопку
+catalogMenuBtn.forEach((button, index) => {
+  button.addEventListener('mouseenter', (e) => {
+    if (!e.target.classList.contains('active-catalog__menu')) {
+      // прохожусь по всих елементам і удаляю їх
+      catalogMenuBtn.forEach((el, indexEl) => {
+        el.classList.remove('active-catalog__menu')
+        catalogBox[indexEl].style.display = 'none'
+      })
+
+      // для потрібних елементів додаю клас/стиль
+      e.target.classList.add('active-catalog__menu')
+      catalogBox[index].style.display = 'flex'
+    }
+  })
+})
 
 //----------------------------
 
@@ -17,11 +95,6 @@ const formLogin = document.querySelector('.form-login')
 const formRegistration = document.querySelector('.form-registration')
 const modalRestoration = document.querySelector('.modal__restoration')
 const formLink = document.querySelector('.form__link')
-
-icons[2].addEventListener('click', () => {
-  modalWindow.style.display = 'flex'
-  document.body.style.overflow = 'hidden'
-})
 
 modalClosed.addEventListener('click', () => {
   modalWindow.style.display = 'none'
@@ -50,24 +123,24 @@ formLink.addEventListener('click', () => {
 })
 
 // --------------Slider-----------------
-const sliderNumber = document.querySelectorAll('.slider__list-number')
-const sliderImg = document.querySelector('.slider-img')
+// const sliderNumber = document.querySelectorAll('.slider__list-number')
+// const sliderImg = document.querySelector('.slider-img')
 
-let indexSlider = 1
-setInterval(function () {
-  sliderNumber.forEach((el) => {
-    if (el.classList.contains('number-active')) {
-      el.classList.remove('number-active')
-    }
-  })
+// let indexSlider = 1
+// setInterval(function () {
+//   sliderNumber.forEach((el) => {
+//     if (el.classList.contains('number-active')) {
+//       el.classList.remove('number-active')
+//     }
+//   })
   
-  if (sliderNumber.length <= indexSlider) {
-    indexSlider = 0
-    sliderImg.setAttribute('src', `./img/top/slider-0${indexSlider + 1}.png`)
-    sliderNumber[indexSlider].classList.add('number-active')
-  } else {
-    sliderNumber[indexSlider].classList.add('number-active')
-    sliderImg.setAttribute('src', `./img/top/slider-0${indexSlider + 1}.png`)
-    indexSlider++
-  }
-}, 5000)
+//   if (sliderNumber.length <= indexSlider) {
+//     indexSlider = 0
+//     sliderImg.setAttribute('src', `./img/top/slider-0${indexSlider + 1}.png`)
+//     sliderNumber[indexSlider].classList.add('number-active')
+//   } else {
+//     sliderNumber[indexSlider].classList.add('number-active')
+//     sliderImg.setAttribute('src', `./img/top/slider-0${indexSlider + 1}.png`)
+//     indexSlider++
+//   }
+// }, 5000)

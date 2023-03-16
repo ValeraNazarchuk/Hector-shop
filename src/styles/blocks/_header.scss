@@ -1,8 +1,19 @@
 .header {
   position: absolute;
-  top: 33px;
+  top: 0;
   left: 0;
   right: 0;
+  z-index: 5;
+}
+
+.header--white{
+  background-color: $bg-white;
+  transition: all 0s;
+}
+
+.text--black {
+  fill: $fs-black !important;
+  color: $fs-black !important;
 }
 
 .header__inner {
@@ -10,65 +21,79 @@
   align-items: center;
 }
 
+.header__logo {
+  margin: 15px 10px 0 0px;
+  width: 110px;
+  img{
+    width: 100%;
+  }
+}
+
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 26px;
 
   &-item {
-    cursor: pointer;
     letter-spacing: 0.07em;
-    display: flex;
     white-space: nowrap;
   }
 }
 
-.link--active {
-    padding: 47px 26px 41px 36px;
-    background-color: $bg-black1;
-    opacity: 0.5;
-    color: $fs-white;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
+.nav__item-link {
+  padding: 45px 13px;
+  transition: all .5s;
+  color: $fs-white;
+  fill: #fff;
+  &:hover {
+    background-color: $bg-black;
+  }
 }
 
-.nav__item-arrow {
+.button--active{
+    background-color: $bg-black;
+    color: $fs-white !important;
+
+  &:first-child {
+    .nav__icon-arrow {
+        fill: #fff;
+        transform: rotate(-180deg);
+      }
+  }
+}
+
+.nav__icon-arrow{
+  width: 13px;
+  height: 8px;
   margin-left: 7px;
+  transition: transform .5s;
 }
 
-.arrow--active {
-  margin-left: 17px;
-  transform: rotate(180deg);
-}
-
-
-.header__logo {
-  margin-left: 50px;
-}
 
 .header__box {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 73px;
-  &-img {
-    cursor: pointer;
+  &-link {
+    padding: 40px 15px;
+    transition: all .5s;
+    &:hover {
+      background-color: $bg-black;
+    }
+  }
+  &-icon{
+    fill: $bg-white;
   }
 }
 
 // -----------------Catalog-----------------------
 .catalog {
+  display: none;
   background-color: $bg-white;
-  margin-top: 50px;
   position: absolute;
-  transform: translateY(-200%);
-  transition: transform .5s;
-  padding: 0 20px 55px 0px;
-}
-
-.catalog--active {
-  transform: translateY(-30%);
+  top: 110px;
+  left: 0;
+  width: 100%;
+  padding: 30px 50px;
 }
 
 .catalog__inner {
@@ -101,10 +126,21 @@
     }
 }
 
-.catalog__clothers {
+.catalog__menu {
   display: flex;
   align-items: center;
   gap: 40px;
+  padding: 0 0 40px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $border-gray;
+  }
   &-link {
     font-weight: 500;
     font-size: 20px;
@@ -112,22 +148,26 @@
     letter-spacing: 0.07em;
     padding: 17px 57px;
     border: 1px solid $border-black;
-    &:hover {
-      cursor: pointer;
-    }
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .5s;
   }
 }
 
-.catalog__border {
-  margin: 40px 0 30px;
-  width: 100%;
-  border: 1px solid $border-gray;
+.active-catalog__menu {
+  color: $fs-white;
+  background-color: $bg-black;
+  border-color: $bg-white;
 }
 
-.catalog__lists {
-  display: flex;
+.catalog__body-box {
+  display: none;
   align-items: center;
   gap: 135px;
+  padding: 30px 0 0;
+  &:first-child{
+    display: flex;
+  }
 }
 
 .catalog__list {
@@ -135,19 +175,67 @@
   flex-direction: column;
   white-space: nowrap;
   &-title {
+    display: inline;
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
     margin-bottom: 28px;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+      text-shadow: 1px 1px  $fs-black;
+    }
   }
-  &-item {
+  &-link {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     color: $fs-gray1;
+    transition: all .3s;
+    &:hover{
+      text-shadow: 1px 1px  $fs-black;
+    }
   }
   &-item + .catalog__list-item {
     margin-top: 25px;
+  }
+}
+
+//-----------CLIENTS----------
+
+.nav__clients{
+  &-list {
+    display: none;
+    position: absolute;
+    top: 110px;
+    align-items: center;
+    background-color: $bg-white;
+  }
+  &-item {
+    padding: 20px;
+    transition: all .5s;
+    &:hover{
+      background-color: #474747;
+      .nav__clients-icon,
+      .nav__clients-link{
+        color: $fs-white;
+        fill: $bg-white;
+      }
+    }
+  }
+  &-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $bg-grayIcon;
+    transition: all .5s;
+  }
+  &-icon {
+    fill: $bg-grayIcon;
+    margin-bottom: 15px;
+    max-width: 40px;
+    max-height: 40px;
+    transition: all .5s;
   }
 }
 
