@@ -84,24 +84,26 @@ catalogMenuBtn.forEach((button, index) => {
   })
 })
 
-//----------------------------
+//-----------------MODAL-USER----------
 
-const icons = document.querySelectorAll('.header__box-img')
-const modalWindow = document.querySelector('.modal')
-const modalClosed = document.querySelector('.modal__closed')
-const modalBox = document.querySelector('.modal__box')
-const modalButtons = document.querySelectorAll('.modal__box-btn')
+const userBtn = document.querySelectorAll('.header__list-item')[2]
+const modalWindow = document.querySelector('.modalUser')
+const modalClosed = document.querySelector('.modalUser__closed')
+const modalBox = document.querySelector('.modalUser__box')
+const modalButtons = document.querySelectorAll('.modalUser__box-btn')
 const formLogin = document.querySelector('.form-login')
 const formRegistration = document.querySelector('.form-registration')
 const modalRestoration = document.querySelector('.modal__restoration')
 const formLink = document.querySelector('.form__link')
 
+
+
 modalClosed.addEventListener('click', () => {
-  modalWindow.style.display = 'none'
-  document.body.style.overflow = 'auto'
-  modalRestoration.style.display = 'none'
-  modalBox.style.display = 'block'
-})
+    modalWindow.style.display = 'none'
+    document.body.style.overflow = 'auto'
+    modalRestoration.style.display = 'none'
+    modalBox.style.display = 'block'
+  })
 
 modalButtons[0].addEventListener('click', () => {
   modalButtons[0].classList.add('button-active')

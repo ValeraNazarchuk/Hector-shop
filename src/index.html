@@ -217,48 +217,44 @@
             </ul>
           </nav>
 
-          <div class="header__box">
-            <a class="header__box-link" href="#">
-              <svg class="icons header__box-icon">
-                <use xlink:href="./img/header/icons.svg#heart"></use>
-              </svg>
-            </a>
-            <a class="header__box-link" href="#">
-              <svg class="icons header__box-icon">
-                <use xlink:href="./img/header/icons.svg#backet"></use>
-              </svg>
-            </a>
-            <a class="header__box-link" href="#">
-              <svg class="icons header__box-icon">
-                <use xlink:href="./img/header/icons.svg#user"></use>
-              </svg>
-            </a>
-            <a class="header__box-link" href="#">
-              <svg class="icons header__box-icon">
-                <use xlink:href="./img/header/icons.svg#search"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="modal">
-          <div class="modal__inner">
-            <div class="modal__closed">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a class="header__list-link" href="#">
+                <svg class="icons header__list-icon">
+                  <use xlink:href="./img/header/icons.svg#heart"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__list-link" href="#">
+                <svg class="icons header__list-icon">
+                  <use xlink:href="./img/header/icons.svg#backet"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__list-link" href="#">
+                <svg class="icons header__list-icon">
+                  <use xlink:href="./img/header/icons.svg#user"></use>
+                </svg>
+              </a>
+              <div class="modalUser">
+          <div class="modalUser__inner">
+            <div class="modalUser__closed">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="18.5" fill="white" stroke="#0F0F0F" stroke-width="3"/>
               <line x1="13.7071" y1="13.2929" x2="26.435" y2="26.0208" stroke="black" stroke-width="2"/>
               <line y1="-1" x2="18" y2="-1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 27 14)" stroke="black" stroke-width="2"/>
               </svg>
             </div>
-            <div class="modal__box">
-              <div class="modal__box-buttons">
-                <button class="modal__box-btn button-active" data-login="login" type="button">ЛОГІН</button>
-                <button class="modal__box-btn" data-registration="registration" type="button">РЕЄСТРАЦІЯ</button>
+            <div class="modalUser__box">
+              <div class="modalUser__box-buttons">
+                <button class="modalUser__box-btn button-active" data-login="login" type="button">ЛОГІН</button>
+                <button class="modalUser__box-btn" data-registration="registration" type="button">РЕЄСТРАЦІЯ</button>
               </div>
               <form class="form-login">
                 <div class="form__box-input">
                   <input class="form__input" type="email" placeholder="Введите email">
-                <!-- <span class="modal__input-error">*некорректно введенные данные</span> -->
                   <input class="form__input" type="password" placeholder="Введите пароль">
                 </div>
                 <button class="form__btn" type="submit" href="#">Увійти</button>
@@ -277,15 +273,26 @@
               </form>
             </div>
 
-            <form class="modal__restoration">
-              <h4 class="modal__restoration-title" data-login="login">ВІДНОВЛЕННЯ ПАРОЛЯ</h4>
-              <div class="modal__restoration-box">
+            <form class="modalUser__restoration">
+              <h4 class="modalUser__restoration-title" data-login="login">ВІДНОВЛЕННЯ ПАРОЛЯ</h4>
+              <div class="modalUser__restoration-box">
                 <input class="form__input" type="email" placeholder="Введите email">
                 <button class="form__btn" type="submit" href="#">ВІДНОВИТИ</button>
               </div>
             </form>
           </div>
         </div>
+            </li>
+            <li class="header__list-item">
+              <a class="header__list-link" href="#">
+                <svg class="icons header__list-icon">
+                  <use xlink:href="./img/header/icons.svg#search"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+              
       </div>
       </div>
     </header>

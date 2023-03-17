@@ -69,13 +69,14 @@
 }
 
 
-.header__box {
+.header__list {
   margin-left: auto;
   display: flex;
   align-items: center;
-  &-link {
-    padding: 40px 15px;
+  &-item {
+    padding: 40px 15px 37px;
     transition: all .5s;
+    cursor: pointer;
     &:hover {
       background-color: $bg-black;
     }
@@ -239,9 +240,9 @@
   }
 }
 
-//-------------Modal--------------
+//-------------modalUser--------------
 
-.modal {
+.modalUser {
   position: fixed;
   top: 0;
   left: 0;
@@ -252,7 +253,7 @@
   display: none; //------------------
 }
 
-.modal__inner {
+.modalUser__inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -285,14 +286,14 @@
   }
 }
 
-.modal__closed {
+.modalUser__closed {
   position: absolute;
   top: -20px;
   right: -20px;
   cursor: pointer;
 }
 
-.modal__box {
+.modalUser__box {
   width: 700px;
   padding: 45px 45px 30px 50px;
   display: flex;
@@ -377,7 +378,7 @@
   color: $fs-gray2;
 }
 
-.modal__restoration {
+.modalUser__restoration {
   display: none;
   width: 500px;
   padding-bottom: 40px;

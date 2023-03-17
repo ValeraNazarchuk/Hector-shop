@@ -248,19 +248,20 @@ body {
   transition: transform 0.5s;
 }
 
-.header__box {
+.header__list {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
-.header__box-link {
-  padding: 40px 15px;
+.header__list-item {
+  padding: 40px 15px 37px;
   transition: all 0.5s;
+  cursor: pointer;
 }
-.header__box-link:hover {
+.header__list-item:hover {
   background-color: #000;
 }
-.header__box-icon {
+.header__list-icon {
   fill: #fff;
 }
 
@@ -413,7 +414,7 @@ body {
   transition: all 0.5s;
 }
 
-.modal {
+.modalUser {
   position: fixed;
   top: 0;
   left: 0;
@@ -424,7 +425,7 @@ body {
   display: none;
 }
 
-.modal__inner {
+.modalUser__inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -432,7 +433,7 @@ body {
   background-color: #fff;
   border: 3px solid #0F0F0F;
 }
-.modal__inner::before {
+.modalUser__inner::before {
   content: "";
   position: absolute;
   background-image: url(../img/header/bg-before-logo.svg);
@@ -444,7 +445,7 @@ body {
   width: 116px;
   height: 134px;
 }
-.modal__inner::after {
+.modalUser__inner::after {
   content: "";
   position: absolute;
   background-image: url(../img/header/bg-after-logo.svg);
@@ -457,25 +458,25 @@ body {
   height: 78px;
 }
 
-.modal__closed {
+.modalUser__closed {
   position: absolute;
   top: -20px;
   right: -20px;
   cursor: pointer;
 }
 
-.modal__box {
+.modalUser__box {
   width: 700px;
   padding: 45px 45px 30px 50px;
   display: flex;
   flex-direction: column;
 }
-.modal__box-buttons {
+.modalUser__box-buttons {
   display: flex;
   align-items: center;
   gap: 17px;
 }
-.modal__box-btn {
+.modalUser__box-btn {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -552,12 +553,12 @@ body {
   color: #878787;
 }
 
-.modal__restoration {
+.modalUser__restoration {
   display: none;
   width: 500px;
   padding-bottom: 40px;
 }
-.modal__restoration-title {
+.modalUser__restoration-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -569,7 +570,7 @@ body {
   text-align: center;
   margin-bottom: 37px;
 }
-.modal__restoration-box {
+.modalUser__restoration-box {
   margin: 0 auto;
   width: 375px;
 }
