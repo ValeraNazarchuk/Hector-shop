@@ -239,6 +239,45 @@
                 </svg>
               </a>
               <div class="modalUser">
+                <div class="modalUser__content">
+                    <div class="modalUser__body">
+                        <button class="modalUser__close" type="button" ></button>
+                        <div class="modalUser__box">
+                          <div class="modalUser__box-buttons">
+                            <button class="modalUser__box-btn button-active" data-login="login" type="button">ЛОГІН</button>
+                            <button class="modalUser__box-btn" data-registration="registration" type="button">РЕЄСТРАЦІЯ</button>
+                          </div>
+                          <form class="form-login">
+                            <div class="form__box-input">
+                              <input class="form__input" type="email" placeholder="Введите email">
+                              <input class="form__input" type="password" placeholder="Введите пароль">
+                            </div>
+                            <button class="form__btn" type="submit">Увійти</button>
+                            <a class="form__link" href="#">Відновити пароль?</a>
+                          </form>
+                          <form class="form-registration">
+                            <div class="form__box-input">
+                              <input class="form__input" type="text" placeholder="Введить імя">
+                              <input class="form__input" type="text" placeholder="Ваше місто">
+                              <input class="form__input" type="tel" placeholder="Введить телефон">
+                              <input class="form__input" type="email" placeholder="Введить email">
+                              <input class="form__input" type="text" placeholder="Введить пароль">
+                              <input class="form__input" type="tel" placeholder="Підтвердити пароль">
+                            </div>
+                            <button class="form__btn" type="submit">ЗАРЕЄСТРУВАТИСЯ</button>
+                          </form>
+                        </div>
+                        <form class="form__restoration">
+                          <h4 class="form__restoration-title" data-login="login">ВІДНОВЛЕННЯ ПАРОЛЯ</h4>
+                          <div class="form__restoration-box">
+                            <input class="form__input" type="email" placeholder="Введите email">
+                            <button class="form__btn" type="submit" href="#">ВІДНОВИТИ</button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+              </div>
+              <!-- <div class="modalUser">
           <div class="modalUser__inner">
             <div class="modalUser__closed">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -281,7 +320,7 @@
               </div>
             </form>
           </div>
-        </div>
+              </div> -->
             </li>
             <li class="header__list-item">
               <a class="header__list-link" href="#">

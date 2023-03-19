@@ -86,43 +86,50 @@ catalogMenuBtn.forEach((button, index) => {
 
 //-----------------MODAL-USER----------
 
-const userBtn = document.querySelectorAll('.header__list-item')[2]
-const modalWindow = document.querySelector('.modalUser')
-const modalClosed = document.querySelector('.modalUser__closed')
-const modalBox = document.querySelector('.modalUser__box')
-const modalButtons = document.querySelectorAll('.modalUser__box-btn')
-const formLogin = document.querySelector('.form-login')
-const formRegistration = document.querySelector('.form-registration')
-const modalRestoration = document.querySelector('.modal__restoration')
-const formLink = document.querySelector('.form__link')
+// const userBtn = document.querySelectorAll('.header__list-item')[2]
+// const modalWindow = document.querySelector('.modalUser')
+// const modalClosed = document.querySelector('.modalUser__closed')
+// const modalBox = document.querySelector('.modalUser__box')
+// const modalButtons = document.querySelectorAll('.modalUser__box-btn')
+// const formLogin = document.querySelector('.form-login')
+// const formRegistration = document.querySelector('.form-registration')
+// const modalRestoration = document.querySelector('.modal__restoration')
+// const formLink = document.querySelector('.form__link')
+
+// userBtn.addEventListener('click', () => {
+//   modalWindow.style.display = 'block'
+//   document.body.style.overflow = 'hidden'
+//   // modalRestoration.style.display = 'none'
+//   // modalBox.style.display = 'block'
+// })
+
+// modalClosed.addEventListener('click', () => {
+//   modalWindow.style.display = 'none'
+//   document.body.style.overflow = 'auto'
+//   modalRestoration.style.display = 'none'
+//   modalBox.style.display = 'block'
+// })
+
+// modalButtons[0].addEventListener('click', () => {
+//   modalButtons[0].classList.add('button-active')
+//   modalButtons[1].classList.remove('button-active')
+//   formRegistration.style.display = 'none'
+//   formLogin.style.display = 'flex'
+// })
+
+// modalButtons[1].addEventListener('click', () => {
+//   modalButtons[0].classList.remove('button-active')
+//   modalButtons[1].classList.add('button-active')
+//   formLogin.style.display = 'none'
+//   formRegistration.style.display = 'flex'
+// })
+
+// formLink.addEventListener('click', () => {
+//   modalBox.style.display = 'none'
+//   modalRestoration.style.display = 'block'
+// })
 
 
-
-modalClosed.addEventListener('click', () => {
-    modalWindow.style.display = 'none'
-    document.body.style.overflow = 'auto'
-    modalRestoration.style.display = 'none'
-    modalBox.style.display = 'block'
-  })
-
-modalButtons[0].addEventListener('click', () => {
-  modalButtons[0].classList.add('button-active')
-  modalButtons[1].classList.remove('button-active')
-  formRegistration.style.display = 'none'
-  formLogin.style.display = 'flex'
-})
-
-modalButtons[1].addEventListener('click', () => {
-  modalButtons[0].classList.remove('button-active')
-  modalButtons[1].classList.add('button-active')
-  formLogin.style.display = 'none'
-  formRegistration.style.display = 'flex'
-})
-
-formLink.addEventListener('click', () => {
-  modalBox.style.display = 'none'
-  modalRestoration.style.display = 'block'
-})
 
 // --------------Slider-----------------
 // const sliderNumber = document.querySelectorAll('.slider__list-number')
