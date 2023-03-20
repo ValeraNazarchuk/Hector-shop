@@ -288,25 +288,24 @@
   }
 
   &__close {
-    padding: 10px;
+    padding: 12px;
     border-radius: 50px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 5px;
+    right: 5px;
     z-index: 30;
     width: 20px;
     height: 20px;
     background-color: transparent;
-    border: none;
     cursor: pointer;
 
     &::after,
     &::before {
       content: '';
       position: absolute;
-      right: 0;
-      width: 100%;
+      right: 2px;
+      width: 80%;
       height: 0.125rem;
       background-color: #000;
       transition: all 0.3s ease 0s;
@@ -321,9 +320,19 @@
       top: calc(50% - 0.0625rem);
       transform: rotate(-45deg);
     }
-  }
 
-  &.show {
+    &:hover {
+      &::after {
+        transform: rotate(-45deg);
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.modal--show {
     visibility: visible;
     overflow: auto;
 
@@ -336,7 +345,6 @@
       transition: all 0.3s ease 0.2s;
     }
   }
-}
 
 .modalUser__box {
   display: flex;
@@ -358,6 +366,11 @@
     border: 3px solid $border-black;
     border-radius: 10px;
     cursor: pointer;
+    transition: all .5s;
+    &:hover {
+      background-color: $bg-black;
+      color: $fs-white;
+    }
   }
 }
 
@@ -410,16 +423,22 @@
     letter-spacing: .07em;
     color: #fff;
     background-color: $bg-black;
+    border: 3px solid $bg-black;
     border-radius: 10px;
     cursor: pointer;
     transition: all .5s;
     &:hover {
-      // background-color: $bg-btn-hover;
+      background-color: $bg-white;
+      color: $fs-black;
+      border-color: $bg-black;
     }
   }
 
   &__link {
     margin-top: 10px;
+    &:hover {
+      text-decoration:  underline;
+    }
   }
 }
 

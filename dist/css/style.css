@@ -456,24 +456,23 @@ body {
   cursor: default;
 }
 .modalUser__close {
-  padding: 10px;
+  padding: 12px;
   border-radius: 50px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 5px;
+  right: 5px;
   z-index: 30;
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: none;
   cursor: pointer;
 }
 .modalUser__close::after, .modalUser__close::before {
   content: "";
   position: absolute;
-  right: 0;
-  width: 100%;
+  right: 2px;
+  width: 80%;
   height: 0.125rem;
   background-color: #000;
   transition: all 0.3s ease 0s;
@@ -486,14 +485,21 @@ body {
   top: calc(50% - 0.0625rem);
   transform: rotate(-45deg);
 }
-.modalUser.show {
+.modalUser__close:hover::after {
+  transform: rotate(-45deg);
+}
+.modalUser__close:hover::before {
+  transform: rotate(45deg);
+}
+
+.modal--show {
   visibility: visible;
   overflow: auto;
 }
-.modalUser.show::before {
+.modal--show::before {
   opacity: 1;
 }
-.modalUser.show .modalUser__body {
+.modal--show .modalUser__body {
   transform: scale(1);
   transition: all 0.3s ease 0.2s;
 }
@@ -517,6 +523,11 @@ body {
   border: 3px solid #0F0F0F;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.5s;
+}
+.modalUser__box-btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .button-active {
@@ -565,12 +576,21 @@ body {
   letter-spacing: 0.07em;
   color: #fff;
   background-color: #000;
+  border: 3px solid #000;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.5s;
 }
+.form__btn:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
 .form__link {
   margin-top: 10px;
+}
+.form__link:hover {
+  text-decoration: underline;
 }
 
 .form__restoration {
