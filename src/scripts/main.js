@@ -133,13 +133,15 @@ catalogMenuBtn.forEach((button, index) => {
 const modalBtn = document.querySelectorAll('.header__list-item')[2]
 const modal = document.querySelector('.modalUser')
 const modalClose = document.querySelector('.modalUser__close')
+const modalBody = document.querySelector('.modalUser__body')
 const modalBox = document.querySelector('.modalUser__box')
 
 //----------FORM(LOGIN AND REGISTRATION AND RESTORATION)------
 const modalButtons = document.querySelectorAll('.modalUser__box-btn')
 const formLogin = document.querySelector('.form-login')
 const formRegistration = document.querySelector('.form-registration')
-
+const formLink = document.querySelector('.form__link')
+const modalRestoration = document.querySelector('.form__restoration')
 
 // ----------OPEN modal----------
 modalBtn.addEventListener('click', (e) => {
@@ -191,7 +193,12 @@ modalButtons[1].addEventListener('click', () => {
   formRegistration.style.display = 'flex'
 })
 
-
+// event for the button RESTORATION
+formLink.addEventListener('click', () => {
+  modalBox.style.display = 'none'
+  modalRestoration.style.display = 'block'
+  modalBody.style.maxWidth = '500px'
+})
 
 // ______________Slider_______________
 // const sliderNumber = document.querySelectorAll('.slider__list-number')
