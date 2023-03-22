@@ -278,12 +278,12 @@
 
     &__body {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     padding: 30px 50px;
     background-color: #fff;
     border-radius: 5px;
     transform: scale(0);
-    transition: all 0.3s ease 0s;
+    transition: all 0.1s ease 0s;
     cursor: default;
   }
 
@@ -381,6 +381,7 @@
 }
 
 .form-login, .form-registration {
+  max-width: 375px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -436,6 +437,7 @@
 
   &__link {
     margin-top: 10px;
+    color: $fs-gray1;
     &:hover {
       text-decoration:  underline;
     }
@@ -444,4 +446,14 @@
 
 .form__restoration{
   display: none;
+  &-title {
+    text-align: center;
+    background-color: $bg-black;
+    color: $fs-white;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.07em;
+    margin-bottom: 38px;
+  }
 }

@@ -62,7 +62,7 @@ navItem[1].addEventListener('mouseleave', () => {
   navLink[1].classList.remove('button--active')
 })
 
-//-------------CATALOG-------------
+// ____________CATALOG____________
 
 const catalogMenuBtn = document.querySelectorAll('.catalog__menu-link')
 const catalogBox = document.querySelectorAll('.catalog__body-box')
@@ -84,7 +84,7 @@ catalogMenuBtn.forEach((button, index) => {
   })
 })
 
-//-----------------MODAL-USER----------
+// _____________MODAL-USER_____________
 
 // const userBtn = document.querySelectorAll('.header__list-item')[2]
 // const modalWindow = document.querySelector('.modalUser')
@@ -129,9 +129,71 @@ catalogMenuBtn.forEach((button, index) => {
 //   modalRestoration.style.display = 'block'
 // })
 
+// _____________OPEN modal_____________
+const modalBtn = document.querySelectorAll('.header__list-item')[2]
+const modal = document.querySelector('.modalUser')
+const modalClose = document.querySelector('.modalUser__close')
+const modalBox = document.querySelector('.modalUser__box')
+
+//----------FORM(LOGIN AND REGISTRATION AND RESTORATION)------
+const modalButtons = document.querySelectorAll('.modalUser__box-btn')
+const formLogin = document.querySelector('.form-login')
+const formRegistration = document.querySelector('.form-registration')
 
 
-// --------------Slider-----------------
+// ----------OPEN modal----------
+modalBtn.addEventListener('click', (e) => {
+  // if (navList.classList.contains('header__menu--active')) menu()
+  if (e.target.className !== 'modalUser__close') {
+    modal.classList.add('modal--show')
+    document.body.style.cssText = `overflow: hidden;`
+  }
+})
+
+modalClose.addEventListener('click', (e) => {
+  modal.classList.remove('modal--show')
+  document.body.style.cssText = ''
+    modalRestoration.style.display = 'none'
+    modalBox.style.display = 'block'
+    modalBody.style.maxWidth = '700px'
+})
+
+// close on click on overlay
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('modal--show')
+    document.body.style.cssText = ''
+  }
+})
+
+// close on press of escape button
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Escape' && modal.classList.contains('modal--show')) {
+    modal.classList.remove('modal--show')
+    document.body.style.cssText = ''
+  }
+})
+
+//--------FORM(LOGIN AND REGISTRATION AND RESTORATION)-------
+// event for the button LOGIN
+modalButtons[0].addEventListener('click', () => {
+  modalButtons[0].classList.add('button-active')
+  modalButtons[1].classList.remove('button-active')
+  formRegistration.style.display = 'none'
+  formLogin.style.display = 'flex'
+})
+
+// event for the button REGISTRATION
+modalButtons[1].addEventListener('click', () => {
+  modalButtons[0].classList.remove('button-active')
+  modalButtons[1].classList.add('button-active')
+  formLogin.style.display = 'none'
+  formRegistration.style.display = 'flex'
+})
+
+
+
+// ______________Slider_______________
 // const sliderNumber = document.querySelectorAll('.slider__list-number')
 // const sliderImg = document.querySelector('.slider-img')
 
