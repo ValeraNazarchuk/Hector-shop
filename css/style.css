@@ -248,19 +248,20 @@ body {
   transition: transform 0.5s;
 }
 
-.header__box {
+.header__list {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
-.header__box-link {
-  padding: 40px 15px;
+.header__list-item {
+  padding: 40px 15px 37px;
   transition: all 0.5s;
+  cursor: pointer;
 }
-.header__box-link:hover {
+.header__list-item:hover {
   background-color: #000;
 }
-.header__box-icon {
+.header__list-icon {
   fill: #fff;
 }
 
@@ -413,90 +414,134 @@ body {
   transition: all 0.5s;
 }
 
-.modal {
+.modalUser {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: none;
+  inset: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding: 30px 15px;
+  color: #000;
+  visibility: hidden;
+  transition: visibility 0.8s ease 0s;
 }
-
-.modal__inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.modalUser::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: opacity 0.8s ease 0s;
+  cursor: default;
+}
+.modalUser__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 100%;
+}
+.modalUser__body {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 50px;
   background-color: #fff;
-  border: 3px solid #0F0F0F;
+  border-radius: 5px;
+  transform: scale(0);
+  transition: all 0.1s ease 0s;
+  cursor: default;
 }
-.modal__inner::before {
-  content: "";
+.modalUser__close {
+  padding: 12px;
+  border-radius: 50px;
+  border: 2px solid #000;
   position: absolute;
-  background-image: url(../img/header/bg-before-logo.svg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  top: -70px;
-  left: -60px;
-  width: 116px;
-  height: 134px;
-}
-.modal__inner::after {
-  content: "";
-  position: absolute;
-  background-image: url(../img/header/bg-after-logo.svg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  bottom: -40px;
-  right: -35px;
-  width: 68px;
-  height: 78px;
-}
-
-.modal__closed {
-  position: absolute;
-  top: -20px;
-  right: -20px;
+  top: 5px;
+  right: 5px;
+  z-index: 30;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
   cursor: pointer;
 }
+.modalUser__close::after, .modalUser__close::before {
+  content: "";
+  position: absolute;
+  right: 2px;
+  width: 80%;
+  height: 0.125rem;
+  background-color: #000;
+  transition: all 0.3s ease 0s;
+}
+.modalUser__close::after {
+  bottom: calc(50% - 0.0625rem);
+  transform: rotate(45deg);
+}
+.modalUser__close::before {
+  top: calc(50% - 0.0625rem);
+  transform: rotate(-45deg);
+}
+.modalUser__close:hover::after {
+  transform: rotate(-45deg);
+}
+.modalUser__close:hover::before {
+  transform: rotate(45deg);
+}
 
-.modal__box {
-  width: 700px;
-  padding: 45px 45px 30px 50px;
+.modal--show {
+  visibility: visible;
+  overflow: auto;
+}
+.modal--show::before {
+  opacity: 1;
+}
+.modal--show .modalUser__body {
+  transform: scale(1);
+  transition: all 0.3s ease 0.2s;
+}
+
+.modalUser__box {
   display: flex;
   flex-direction: column;
 }
-.modal__box-buttons {
+.modalUser__box-buttons {
   display: flex;
   align-items: center;
   gap: 17px;
 }
-.modal__box-btn {
-  font-weight: 700;
+.modalUser__box-btn {
+  font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.07em;
-  padding: 25px 0px 22px;
+  padding: 20px;
   width: 100%;
   border: 3px solid #0F0F0F;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
 }
-
-.button-active {
-  background-color: #0F0F0F;
+.modalUser__box-btn:hover {
+  background-color: #000;
   color: #fff;
 }
 
-.form-registration,
-.form-login {
+.button-active {
+  background-color: #000;
+  color: #fff;
+}
+
+.form-login, .form-registration {
+  max-width: 375px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 375px;
+  width: 100%;
 }
 
 .form-registration {
@@ -507,71 +552,63 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 40px;
-  gap: 30px;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 .form__input {
   width: 100%;
   outline: 0;
   border: none;
-  border-bottom: 3px solid #0F0F0F;
-  padding: 14px 10px 14px 0px;
+  border-bottom: 3px solid #0f0f0f;
+  padding: 14px 10px 14px 0;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.07em;
 }
-.form__input::-moz-placeholder {
-  color: #0F0F0F;
-}
-.form__input::placeholder {
-  color: #0F0F0F;
-}
-
 .form__btn {
-  margin-top: 47px;
+  margin-top: 15px;
   width: 100%;
-  padding: 24px 0;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: 0.07em;
-  color: #fff;
-  background-color: #0F0F0F;
-}
-
-.form__link {
-  margin-top: 17px;
+  padding: 20px 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.07em;
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-  color: #878787;
+  color: #fff;
+  background-color: #000;
+  border: 3px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.form__btn:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+.form__link {
+  margin-top: 10px;
+  color: #666666;
+}
+.form__link:hover {
+  text-decoration: underline;
 }
 
-.modal__restoration {
+.form__restoration {
   display: none;
-  width: 500px;
-  padding-bottom: 40px;
 }
-.modal__restoration-title {
+.form__restoration-title {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.07em;
-  padding: 25px 0px 22px;
-  width: 100%;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 37px;
-}
-.modal__restoration-box {
-  margin: 0 auto;
-  width: 375px;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
 .top {
