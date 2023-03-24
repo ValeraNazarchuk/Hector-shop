@@ -447,7 +447,7 @@ body {
 }
 .modalUser__body {
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   padding: 30px 50px;
   background-color: #fff;
   border-radius: 5px;
@@ -465,7 +465,7 @@ body {
   z-index: 30;
   width: 20px;
   height: 20px;
-  background-color: transparent;
+  background-color: #fff;
   cursor: pointer;
 }
 .modalUser__close::after, .modalUser__close::before {
@@ -568,7 +568,7 @@ body {
   letter-spacing: 0.07em;
 }
 .form__btn {
-  margin-top: 47px;
+  margin-top: 15px;
   width: 100%;
   padding: 20px 0;
   font-weight: 500;
@@ -606,7 +606,9 @@ body {
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.07em;
-  margin-bottom: 38px;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
 .top {

@@ -133,7 +133,6 @@ catalogMenuBtn.forEach((button, index) => {
 const modalBtn = document.querySelectorAll('.header__list-item')[2]
 const modal = document.querySelector('.modalUser')
 const modalClose = document.querySelector('.modalUser__close')
-const modalBody = document.querySelector('.modalUser__body')
 const modalBox = document.querySelector('.modalUser__box')
 
 //----------FORM(LOGIN AND REGISTRATION AND RESTORATION)------
@@ -155,9 +154,8 @@ modalBtn.addEventListener('click', (e) => {
 modalClose.addEventListener('click', (e) => {
   modal.classList.remove('modal--show')
   document.body.style.cssText = ''
-    modalRestoration.style.display = 'none'
-    modalBox.style.display = 'block'
-    modalBody.style.maxWidth = '700px'
+  modalRestoration.style.display = 'none'
+  modalBox.style.display = 'block'
 })
 
 // close on click on overlay
@@ -197,7 +195,6 @@ modalButtons[1].addEventListener('click', () => {
 formLink.addEventListener('click', () => {
   modalBox.style.display = 'none'
   modalRestoration.style.display = 'block'
-  modalBody.style.maxWidth = '500px'
 })
 
 // ______________Slider_______________
